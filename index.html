@@ -2,41 +2,79 @@
 <html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>金門炸豆腐 大寮店</title>
 <style>
-body{margin:0;font-family:"Noto Sans TC","PingFang TC",sans-serif;background:#fff8ee;color:#222}
-header{background:#c8102e;color:#fff;text-align:center;padding:36px 16px}
-header h1{margin:0;font-size:2.2rem}header p{margin:8px 0 0;color:#ffe6a8}
-section{max-width:760px;margin:24px auto;padding:0 16px}
-h2{border-left:6px solid #1d3f8f;padding-left:10px;color:#1d3f8f}
-table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden}
-td,th{padding:12px;border-bottom:1px solid #eee;text-align:left}th{background:#1d3f8f;color:#fff}
-img{max-width:100%;border-radius:10px}
-.btn{display:inline-block;background:#c8102e;color:#fff;padding:12px 22px;border-radius:24px;text-decoration:none;margin:6px 6px 6px 0}
-footer{text-align:center;color:#888;padding:24px;font-size:.85rem}
-
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+:root{--red:#c8102e;--blue:#1d3f8f;--yellow:#ffc928;--bg:#fff8ee}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans TC","PingFang TC",sans-serif;background:var(--bg);color:#222}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,248,238,.82);backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+nav b{color:var(--red);font-size:1.1rem}
+nav div a{margin-left:14px;color:var(--blue);text-decoration:none;font-size:.95rem}
+nav .cta{background:var(--red);color:#fff;padding:6px 14px;border-radius:20px}
+.hero{position:relative;height:100vh;min-height:520px;overflow:hidden;background:var(--blue)}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease}
+.slide.on{opacity:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.25),rgba(0,0,0,.6))}
+.hero-text{position:absolute;z-index:2;left:0;right:0;bottom:16%;text-align:center;color:#fff;padding:0 20px}
+.hero-text small{letter-spacing:.3em;color:var(--yellow)}
+.hero-text h1{font-size:clamp(2rem,7vw,4rem);margin:10px 0;animation:drop 1s ease both}
+.hero-text p{margin:0 0 20px}
+@keyframes drop{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:none}}
+.btn{display:inline-block;background:var(--red);color:#fff;padding:12px 24px;border-radius:26px;text-decoration:none;margin:6px}
+.btn.alt{background:var(--yellow);color:#222}
+section.s{max-width:780px;margin:0 auto;padding:70px 18px 10px}
+h2{border-left:6px solid var(--blue);padding-left:12px;color:var(--blue)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
 .reveal.show{opacity:1;transform:none}
-.item{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:14px;padding:16px 20px;margin:12px 0;box-shadow:0 4px 12px rgba(0,0,0,.08);opacity:0;transform:translateX(-80px);transition:opacity .6s ease,transform .6s ease}
+.item{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:16px;padding:16px 22px;margin:12px 0;box-shadow:0 4px 14px rgba(0,0,0,.09);opacity:0;transform:translateX(-80px);transition:opacity .6s ease,transform .6s ease}
 .item:nth-child(even){transform:translateX(80px)}
 .item.show{opacity:1;transform:none}
-.item b{font-size:1.15rem}.item span{color:#c8102e;font-weight:700}
-header h1{animation:drop 1s ease both}@keyframes drop{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:none}}
-html{scroll-behavior:smooth}
+.item b{font-size:1.15rem}.item span{color:var(--red);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.card{background:#fff;border-radius:16px;padding:18px;box-shadow:0 4px 14px rgba(0,0,0,.09)}
+.card h3{margin:0 0 6px;color:var(--blue)}
+img{max-width:100%;border-radius:14px;display:block}
+footer{text-align:center;color:#888;padding:40px 16px 60px;font-size:.85rem}
+#top{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border:0;border-radius:50%;background:var(--red);color:#fff;font-size:1.3rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
+#top.show{opacity:1;pointer-events:auto}
 </style></head><body>
-<header><h1>金門炸豆腐 大寮店</h1><p>現炸酥脆，金門風味來到大寮</p></header>
-<section class="reveal"><img src="poster.jpg" alt="金門炸豆腐菜單海報"></section>
-<section class="reveal"><h2>菜單</h2>
-<div class="menu"><div class="item"><b>炸豆腐</b><span>1 份 80 ／ 2 份 150</span></div><div class="item"><b>炸豆包</b><span>1 份 80 ／ 2 份 150</span></div><div class="item"><b>彩色蝦餅</b><span>1 份 50</span></div><div class="item"><b>泡菜</b><span>1 份 30</span></div><div class="item"><b>冷泡茶系列</b><span>清涼解渴，自然好茶</span></div></div></section>
-<section class="reveal"><h2>品牌故事</h2>
+<nav><b>金門炸豆腐</b><div><a href="#menu">菜單</a><a href="#story">故事</a><a href="#info">營業資訊</a><a class="cta" href="tel:+886963052058">訂購</a></div></nav>
+
+<div class="hero" id="home">
+<div class="slide on" style="background-image:url(poster.jpg)"></div>
+<div class="slide" style="background-image:url(shop_interior.jpg)"></div>
+<div class="hero-text"><small>KINMEN FRIED TOFU</small><h1>金門炸豆腐 大寮店</h1><p>現炸酥脆，金門風味來到大寮</p>
+<a class="btn" href="#menu">查看菜單</a><a class="btn alt" href="#info">營業資訊</a></div>
+</div>
+
+<section class="s reveal" id="menu"><h2>菜單</h2>
+<div class="menu">
+<div class="item"><b>炸豆腐</b><span>1 份 80 ／ 2 份 150</span></div>
+<div class="item"><b>炸豆包</b><span>1 份 80 ／ 2 份 150</span></div>
+<div class="item"><b>彩色蝦餅</b><span>1 份 50</span></div>
+<div class="item"><b>泡菜</b><span>1 份 30</span></div>
+<div class="item"><b>冷泡茶系列</b><span>清涼解渴，自然好茶</span></div>
+</div></section>
+
+<section class="s reveal" id="story"><h2>品牌故事</h2>
 <p>金門的勝利門，是許多人到金門一定會經過的地方。在那裡的小店，用最簡單的做法，把豆腐炸得外酥內嫩，一口咬下去，是金門人從小吃到大的味道。</p>
 <p>我們把這份手藝帶回高雄大寮。豆腐每天新鮮準備，點單後現炸，配上爽口的泡菜，再來一杯清涼的冷泡茶，就是最道地的組合。</p>
 <p>希望每一位路過的朋友，都能在這裡吃到熱呼呼、香酥酥的金門味，也歡迎常來坐坐聊聊。</p></section>
-<section class="reveal"><h2>店內環境</h2><img src="shop_interior.jpg" alt="店內環境"></section>
-<section class="reveal"><h2>營業資訊</h2>
-<p>營業時間：每天 15:00 至 23:00<br>地址：831 高雄市大寮區山頂里鳳林三路 896-6 號<br>電話：0963-052-058</p>
-<a class="btn" href="tel:+886963052058">電話訂購</a>
-<a class="btn" href="https://maps.app.goo.gl/ZqucUZ8NvbZoQ5bf6">Google 地圖導航</a></section>
-<footer>© 金門炸豆腐 大寮店</footer>
+
+<section class="s reveal"><h2>店內環境</h2><img src="shop_interior.jpg" alt="店內環境"></section>
+
+<section class="s reveal" id="info"><h2>營業資訊</h2>
+<div class="cards">
+<div class="card"><h3>營業時間</h3>每天 15:00 至 23:00</div>
+<div class="card"><h3>地址</h3>831 高雄市大寮區山頂里鳳林三路 896-6 號</div>
+<div class="card"><h3>電話</h3>0963-052-058</div></div>
+<p><a class="btn" href="tel:+886963052058">電話訂購</a><a class="btn alt" href="https://maps.app.goo.gl/ZqucUZ8NvbZoQ5bf6">Google 地圖導航</a></p></section>
+
+<footer>© 金門炸豆腐 大寮店 · v3.0</footer>
+<button id="top" onclick="scrollTo({top:0})">↑</button>
 <script>
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const d=e.target.classList.contains('item')?[...e.target.parentNode.children].indexOf(e.target)*150:0;setTimeout(()=>e.target.classList.add('show'),d);io.unobserve(e.target)}})},{threshold:.15});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;const d=t.classList.contains('item')?[...t.parentNode.children].indexOf(t)*150:0;setTimeout(()=>t.classList.add('show'),d);io.unobserve(t)}}),{threshold:.15});
 document.querySelectorAll('.reveal,.item').forEach(el=>io.observe(el));
+const sl=[...document.querySelectorAll('.slide')];let i=0;
+setInterval(()=>{sl[i].classList.remove('on');i=(i+1)%sl.length;sl[i].classList.add('on')},4500);
+const tb=document.getElementById('top');addEventListener('scroll',()=>tb.classList.toggle('show',scrollY>500));
 </script></body></html>
