@@ -37,7 +37,7 @@ footer{text-align:center;color:#888;padding:40px 16px 60px;font-size:.85rem}
 #top{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border:0;border-radius:50%;background:var(--red);color:#fff;font-size:1.3rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
 #top.show{opacity:1;pointer-events:auto}
 </style></head><body>
-<nav><b>金門炸豆腐</b><div><a href="#menu">菜單</a><a href="#story">故事</a><a href="#info">營業資訊</a><a class="cta" href="tel:+886963052058">訂購</a></div></nav>
+<nav><b>金門炸豆腐</b><div><a href="#menu">菜單</a><a href="#story">故事</a><a href="#info">營業資訊</a><a class="cta" href="#info" onclick="if(/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent)){location.href='tel:+886963052058';return false}">訂購</a></div></nav>
 
 <div class="hero" id="home">
 <div class="slide on" style="background-image:url(poster.jpg)"></div>
@@ -67,7 +67,7 @@ footer{text-align:center;color:#888;padding:40px 16px 60px;font-size:.85rem}
 <div class="card"><h3>營業時間</h3>每天 15:00 至 23:00</div>
 <div class="card"><h3>地址</h3>831 高雄市大寮區山頂里鳳林三路 896-6 號</div>
 <div class="card"><h3>電話</h3>0963-052-058</div></div>
-<p><a class="btn" href="tel:+886963052058">電話訂購</a><a class="btn alt" href="https://maps.app.goo.gl/ZqucUZ8NvbZoQ5bf6">Google 地圖導航</a></p></section>
+<p><a class="btn" href="tel:+886963052058">電話訂購 0963-052-058</a><a class="btn alt" href="https://maps.app.goo.gl/ZqucUZ8NvbZoQ5bf6">Google 地圖導航</a></p></section>
 
 <footer>© 金門炸豆腐 大寮店 · v3.0</footer>
 <button id="top" onclick="scrollTo({top:0})">↑</button>
